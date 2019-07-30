@@ -1,1 +1,6 @@
-<%= render 'form' %>
+<%= simple_form_for new_user_service_path do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit, class: "btn btn-primary", value: "Submit" %>
+<% end %>
