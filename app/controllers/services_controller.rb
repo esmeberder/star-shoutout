@@ -5,6 +5,9 @@ class ServicesController < ApplicationController
     @services = policy_scope(Service)
   end
 
+  def show
+  end
+
   def new
     @service = Service.new
     authorize @service

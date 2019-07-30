@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :services
+  resources :users do
+    resources :services, shallow: true
+  end
 
-  root to: 'pages#home'
+  resources :bookings
+
+  root to: 'users#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
