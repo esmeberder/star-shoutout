@@ -5,6 +5,9 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
+  def show
+  end
+
   def new
     @booking = Booking.new
     authorize @booking
