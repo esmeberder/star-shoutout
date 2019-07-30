@@ -15,10 +15,10 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
-    @service.user = current_user
     authorize @service
+    @service.user = current_user
     if @service.save
-      redirect_to services_path
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -31,7 +31,7 @@ class ServicesController < ApplicationController
   def update
     authorize @service
     if @service.update(service_params)
-      redirect_to service_path(@service)
+      redirect_to user_path(current_user)
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class ServicesController < ApplicationController
   def destroy
     authorize @service
     @service.destroy
-    redirect_to services_path
+    redirect_to user_path(current_user)
   end
 
   private
