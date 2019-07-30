@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :users do
-    resources :services, shallow: true
+  resources :users, only: [:show, :index]
+
+  resources :services do
     resources :bookings, shallow: true
   end
+
+
 
 
   root to: 'users#index'

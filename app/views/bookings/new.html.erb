@@ -1,5 +1,5 @@
-<%= simple_form_for new_booking_path do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :recipient %>
+  <%= f.input :instructions %>
   <%= f.button :submit, class: "btn btn-primary", value: "Submit" %>
 <% end %>

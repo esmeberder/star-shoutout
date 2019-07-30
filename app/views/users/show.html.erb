@@ -4,6 +4,7 @@
   <p>Service Title: <%= service.title %></p>
   <p>Description: <%= service.description %></p>
   <p>Price (RMB): <%= service.price %></p>
+  <%= link_to "Book this service", new_service_booking_path(service) %>
   <% if policy(service).edit? %>
     <%= link_to "Update", edit_service_path(service) %>
   <% end %>
@@ -12,5 +13,5 @@
   <% end %>
 <% end %>
 <% if policy(Service).create? %>
-  <%= link_to "New service", new_user_service_path(@user) %>
+  <%= link_to "New service", new_service_path %>
 <% end %>

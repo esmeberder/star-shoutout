@@ -17,7 +17,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     authorize @booking
     @booking.user = current_user
-    @booking.service
     if @booking.save
       redirect_to bookings_path
     else
@@ -36,7 +35,6 @@ class BookingsController < ApplicationController
     else
       render :edit
     end
-    >>>>>>> d8402925081ebcf51cc8281490223e922172c119
   end
 
   private
@@ -45,12 +43,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  <<<<<<< HEAD
-  def service_params
-    params.require(:service).permit(:accepted, :user_id, :service_id)
-=======
-    def booking_params
-      params.require(:booking).permit(:accepted, :user_id, :service_id)
-      >>>>>>> d8402925081ebcf51cc8281490223e922172c119
-    end
+  def booking_params
+    params.require(:booking).permit(:recipient, :instructions, :accepted, :user_id, :service_id)
   end
+end
