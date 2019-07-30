@@ -14,7 +14,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.service_id.user_id == user.id
+    record.service.user_id == user.id
   end
 
   private

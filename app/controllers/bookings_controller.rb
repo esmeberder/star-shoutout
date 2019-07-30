@@ -6,19 +6,24 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @service = Service.find(params[:service_id])
   end
 
   def new
     @booking = Booking.new
     authorize @booking
+    @service = Service.find(params[:service_id])
+
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @service = Service.find(params[:service_id])
     authorize @booking
+    @booking.user = current_user
+    @booking.service_id = @service.id
     if @booking.save
-      redirect_to bookings_path
+      redirect_to service_bookings_path(@service.id)
     else
       render :new
     end
@@ -31,11 +36,10 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
     if @booking.update(booking_params)
-      redirect_to bookings_path
+      redirect_to service_bookings_path(@booking.service_id)
     else
       render :edit
     end
-    >>>>>>> d8402925081ebcf51cc8281490223e922172c119
   end
 
   private
@@ -44,12 +48,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  <<<<<<< HEAD
-  def service_params
-    params.require(:service).permit(:accepted, :user_id, :service_id)
-=======
-    def booking_params
-      params.require(:booking).permit(:accepted, :user_id, :service_id)
-      >>>>>>> d8402925081ebcf51cc8281490223e922172c119
-    end
+  def booking_params
+    params.require(:booking).permit(:recipient, :instructions, :accepted, :user_id, :service_id)
   end
+end
