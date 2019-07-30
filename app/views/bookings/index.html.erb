@@ -1,5 +1,5 @@
 <% accepted_bookings = @bookings.where(accepted: true) %>
-<% not_accepted_bookings = @bookings.where(accepted: false) %>
+<% not_accepted_bookings = @bookings.where(accepted: [false, nil]) %>
 <h3>New Requests (<%= not_accepted_bookings.count %>):</h3>
 <% not_accepted_bookings.each do |booking| %>
   <p>Service: <%= booking.service.title %></p>
