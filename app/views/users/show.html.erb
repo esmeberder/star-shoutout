@@ -1,7 +1,7 @@
 <p>Star's name: <%= @user.name %></p>
 <p>Star's bio: <%= @user.bio %></p>
+<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
 <p>------------------------------</p>
-
 <h3>Services:</h3>
 <% @services.each do |service| %>
   <p>Service Title: <%= service.title %></p>
@@ -17,9 +17,7 @@
   <% end %>
   <p>-----------------------------------</p>
 <% end %>
-
 <p>-----------------------------------</p>
-
 <% if policy(Service).create? %>
   <%= link_to "New service", new_service_path %>
 <% end %>
