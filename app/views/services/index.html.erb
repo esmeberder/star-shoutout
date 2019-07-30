@@ -1,0 +1,15 @@
+<% @services.each do |service| %>
+  <p>Service Title: <%= service.title %></p>
+  <p>Description: <%= service.description %></p>
+  <p>Price (RMB): <%= service.price %></p>
+  <% if policy(service).edit? %>
+    <%= link_to "Update", edit_service_path(service) %>
+  <% end %>
+  <% if policy(service).destroy? %>
+    <%= link_to "Delete", service_path(service), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+<% end %>
+<h3>Add a new service</h3>
+<% if policy(Service).create? %>
+  <%= link_to "New service", new_service_path %>
+<% end %>

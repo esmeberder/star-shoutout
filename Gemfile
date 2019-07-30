@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'pundit'
 
 gem 'bootsnap', require: false
 gem 'devise'
