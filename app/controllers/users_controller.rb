@@ -10,18 +10,18 @@ class UsersController < ApplicationController
     @services = @user.services
   end
 
-  def edit
-    authorize @user
-  end
+  # def edit
+  #   authorize @user
+  # end
 
-  def update
-    authorize @user
-    if @user.update(user_params)
-      redirect_to user_path(@user)
-    else
-      render :edit
-    end
-  end
+  # def update
+  #   authorize @user
+  #   if @user.update(user_params)
+  #     redirect_to user_path(@user)
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   private
 

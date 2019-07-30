@@ -1,4 +1,5 @@
-<%= @user.name %>
+<p>Star's name: <%= @user.name %></p>
+<p>Bio: <%= @user.bio %></p>
 <h3>Services:</h3>
 <% @services.each do |service| %>
   <p>Service Title: <%= service.title %></p>
@@ -10,7 +11,9 @@
   <% if policy(service).destroy? %>
     <%= link_to "Delete", service_path(service), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
+  <p>-----------------------------------</p>
 <% end %>
+<p>-----------------------------------</p>
 <% if policy(Service).create? %>
   <%= link_to "New service", new_user_service_path(@user) %>
 <% end %>
