@@ -1,4 +1,4 @@
-<%= simple_form_for @booking do |f| %>
+<%= simple_form_for [@service, @booking] do |f| %>
   <%= f.input :recipient %>
   <%= f.input :instructions %>
   <%= f.button :submit, class: "btn btn-primary", value: "Submit" %>
