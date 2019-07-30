@@ -5,6 +5,10 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def index
+    record.star == true
+  end
+
   def show?
     record.star == true
   end

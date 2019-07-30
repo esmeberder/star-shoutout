@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.where(star: true)
+    @users = policy_scope(User).where(star: true)
   end
 
   def show
