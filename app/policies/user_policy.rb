@@ -5,12 +5,12 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-  def index
-    record.star == true
+  def show?
+    record_is_a_star?
   end
 
-  def show?
-    record.star == true
+  def create?
+    user_is_owner_or_admin?
   end
 
   def update?
@@ -27,5 +27,9 @@ class UserPolicy < ApplicationPolicy
 
   def user_is_owner_or_admin?
     record.user == user || user.admin
+  end
+
+  def record_is_a_star?
+    record.star == true
   end
 end

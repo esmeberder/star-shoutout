@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    authorize @user
+    @services = @user.services
   end
 
   def edit
