@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @service = Service.find(params[:service_id])
   end
 
   def new
@@ -22,7 +23,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.service_id = @service.id
     if @booking.save
-      redirect_to service_bookings_path
+      redirect_to service_bookings_path(@service.id)
     else
       render :new
     end
@@ -35,7 +36,7 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
     if @booking.update(booking_params)
-      redirect_to bookings_path
+      redirect_to service_bookings_path(@booking.service_id)
     else
       render :edit
     end

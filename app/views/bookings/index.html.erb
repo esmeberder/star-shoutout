@@ -1,4 +1,25 @@
-<% @bookings.each do |booking| %>
-  <%= booking.recipient %>
-  <%= booking.instructions %>
+<% accepted_bookings = @bookings.where(accepted: true) %>
+<% not_accepted_bookings = @bookings.where(accepted: false) %>
+<h3>New Requests (<%= not_accepted_bookings.count %>):</h3>
+<% not_accepted_bookings.each do |booking| %>
+  <p>Service: <%= booking.service.title %></p>
+  <p>Recipient: <%= booking.recipient %></p>
+  <p>Instructions: <%= booking.instructions %></p>
+  <%= simple_form_for booking do |f| %>
+    <%= f.input :accepted %>
+    <%= f.button :submit, class: "btn btn-primary", value: "Submit" %>
+  <% end %>
+  <p>------------------------------</p>
 <% end %>
+<h3>Pending (<%= accepted_bookings.count %>):</h3>
+<% accepted_bookings.each do |booking| %>
+  <p>Service: <%= booking.service.title %></p>
+  <p>Recipient: <%= booking.recipient %></p>
+  <p>Instructions: <%= booking.instructions %></p>
+  <%= simple_form_for booking do |f| %>
+    <%= f.input :accepted %>
+    <%= f.button :submit, class: "btn btn-primary", value: "Submit" %>
+  <% end %>
+  <p>------------------------------</p>
+<% end %>
+<%= link_to "Back to Profile", user_path(@bookings.first.service.user_id) %>
