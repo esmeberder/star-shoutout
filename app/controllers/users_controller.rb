@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     authorize @user
     @services = @user.services
+    @bookings = @user.bookings
   end
 
   # def edit
