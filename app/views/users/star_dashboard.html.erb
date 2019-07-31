@@ -1,0 +1,12 @@
+Welcome <%= @user.name %>
+<p>------------------------------</p>
+<% @bookings.each do |booking| %>
+  <p>Service: <%= booking.service.title %></p>
+  <p>Recipient: <%= booking.recipient %></p>
+  <p>Instructions: <%= booking.instructions %></p>
+  <%= simple_form_for booking do |f| %>
+    <%= f.input :accepted %>
+    <%= f.button :submit, class: "btn btn-primary", value: "Submit" %>
+  <% end %>
+  <p>------------------------------</p>
+<% end %>
