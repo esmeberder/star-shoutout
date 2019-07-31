@@ -5,6 +5,14 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
+  # def star
+  #   @star = @booking.service.user
+  # end
+
+  # def customer
+  #   @customer = @booking.user
+  # end
+
   def show
     @service = Service.find(params[:service_id])
   end
@@ -13,7 +21,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     authorize @booking
     @service = Service.find(params[:service_id])
-
   end
 
   def create
