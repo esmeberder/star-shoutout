@@ -1,6 +1,9 @@
 <p>Star's name: <%= @user.name %></p>
 <p>Star's tags</p>
 <p>Star's bio: <%= @user.bio %></p>
+<% if current_user.admin == true %>
+  <%= link_to "Edit My Profile", edit_user_registration_path, class: "navbar-link" %>
+<% end %>
 <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
 <p>------------------------------</p>
 <h3>Services:</h3>
@@ -19,10 +22,8 @@
 <p>Seed with samples</p>
 <h1>Related</h1>
 <p>Show some other stars</p>
-
 <% if @user == current_user %>
   <%= link_to "Add a new service", new_service_path %>
 <% end %>
 <%= link_to "View my bookings", service_bookings_path(@bookings) %>
 <%= link_to "Back to all stars", users_path %>
-
