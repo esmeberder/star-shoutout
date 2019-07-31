@@ -43,7 +43,7 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
     if @booking.update(booking_params)
-      redirect_to service_bookings_path(@booking.service_id)
+      redirect_to star_dashboard_path
     else
       render :edit
     end
