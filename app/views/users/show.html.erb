@@ -22,5 +22,6 @@
 <% if @user == current_user %>
   <%= link_to "Add a new service", new_service_path %>
 <% end %>
-<%= link_to "View my bookings", service_bookings_path(@bookings) %>
+
 <%= link_to "Back to all stars", users_path %>
+
