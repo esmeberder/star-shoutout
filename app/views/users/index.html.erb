@@ -1,4 +1,6 @@
 <% @users.each do |user| %>
   <%= link_to user.name, user_path(user) %>
   <p>Bio: <%= user.bio %></p>
+  <%= cl_image_tag user.photo, height: 150, width: 200, crop: :fill %>
+  <p>-------------</p>
 <% end %>
