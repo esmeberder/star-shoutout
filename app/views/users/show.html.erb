@@ -20,6 +20,7 @@
 <h1>Related</h1>
 <p>Show some other stars</p>
 <% if policy(Service).create? %>
+<button class="pink-button">  <%= link_to "Add a new service", new_service_path %></button>
   <%= link_to "Add a new service", new_service_path %>
 <% end %>
 <%= link_to "View my bookings", service_bookings_path(@bookings) %>
