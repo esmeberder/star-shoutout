@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show, :index]
-
+  get 'dashboard', to: 'users#dashboard'
   resources :services do
     resources :bookings, shallow: true
   end
