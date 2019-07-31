@@ -1,15 +1,55 @@
 
- <div class="container pt-5">
-<div class="row justify-content-center">
- <div class="col-12 col-lg-8">
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-7">
+      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <h2>Category</h2>
+      <button class="purple-button-sm">Featured</button>
+      <button class="grey-button-md">Actors</button>
+      <button class="grey-button-md">Atheletes</button>
+      <button class="grey-button-md">Singers</button>
+    </div>
+    <div class="card-container col-md-10">
+      <% @users.each do |user| %>
+        <div class="user-card">
+          <%= cl_image_tag user.photo%>
+          <div class="user-infos">
+            <div>
+              <p class="p2"><%= link_to user.name, user_path(user) %></p>
+              <p class="p1">Bio: <%= user.bio %></p>
+            </div>
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<% @users.each do |user| %>
-  <%= link_to user.name, user_path(user) %>
-  <p>Bio: <%= user.bio %></p>
-  <%= cl_image_tag user.photo, height: 150, width: 200, crop: :fill %>
-  <p>-------------</p>
-<% end %>
+</div>
 
-</div>
-</div>
-</div>
+
+
+<!-- <div class="user-card">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div> -->
+<!-- </div> -->
+
