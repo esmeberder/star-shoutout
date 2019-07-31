@@ -1,3 +1,8 @@
+puts "Eradication"
+User.destroy_all
+Service.destroy_all
+Booking.destroy_all
+puts "seeding new life"
 
 actors = ["Angelina Jolie", "Will Smith", "Jennifer Lawrence", "Tom Cruise", "Mila Kunis", "Matt Damon", "Ryan Gosling", "Emily Blunt","Chris Pratt", "Emma Stone", "Scarlett Johansson", "Steve Carell"]
 actors.each do |actor|
