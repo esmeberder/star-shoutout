@@ -1,9 +1,6 @@
 <p>Star's name: <%= @user.name %></p>
 <p>Star's tags</p>
 <p>Star's bio: <%= @user.bio %></p>
-<% if current_user.admin == true %>
-  <p><%= link_to "Edit My Profile", edit_user_registration_path %></p>
-<% end %>
 <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
 <p>------------------------------</p>
 <h3>Services:</h3>
