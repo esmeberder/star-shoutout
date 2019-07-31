@@ -1,0 +1,35 @@
+.purple-button-lg{
+  border-radius: 6px;
+  width: 288px;
+  height: 46.56px;
+  color:white;
+  background-image: $purple-gradient;
+}
+
+.purple-button-lg a {
+  color: white;
+}
+
+.purple-button-sm {
+  border-radius: 6px;
+  width: 148px;
+  height: 46.56px;
+  color:white;
+  background-image: $purple-gradient;
+}
+
+.purple-button-sm a {
+  color: white;
+}
+
+.purple-button-md {
+  border-radius: 6px;
+  width: 240px;
+  height: 48px;
+  color: white;
+  background-image: $purple-gradient;
+}
+
+.purple-button-md a {
+  color: white;
+}
