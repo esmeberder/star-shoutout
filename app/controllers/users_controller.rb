@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show]
 
   def index
     @users = policy_scope(User).where(star: true)
@@ -11,18 +11,11 @@ class UsersController < ApplicationController
     @bookings = @user.bookings
   end
 
-  # def edit
-  #   authorize @user
-  # end
-
-  # def update
-  #   authorize @user
-  #   if @user.update(user_params)
-  #     redirect_to user_path(@user)
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def dashboard
+    @user = current_user
+    authorize @user
+    @bookings = @user.bookings
+  end
 
   private
 
