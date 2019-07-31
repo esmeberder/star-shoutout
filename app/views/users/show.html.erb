@@ -19,14 +19,8 @@
 <p>Seed with samples</p>
 <h1>Related</h1>
 <p>Show some other stars</p>
-<%= link_to "View my bookings", service_bookings_path(@bookings) %>
-<% if policy(Service).create? %>
-<button class="pink-button">  <%= link_to "Add a new service", new_service_path %></button>
+<% if @user == current_user %>
   <%= link_to "Add a new service", new_service_path %>
 <% end %>
-<<<<<<< HEAD
 <%= link_to "View my bookings", service_bookings_path(@bookings) %>
 <%= link_to "Back to all stars", users_path %>
-=======
-<%= link_to "Back to all stars", users_path %>
->>>>>>> 5872d0fe9a003763ee6187678a8c899732b61f00

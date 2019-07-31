@@ -11,10 +11,22 @@ class UsersController < ApplicationController
     @bookings = @user.bookings
   end
 
-  def dashboard
+  def user_dashboard
     @user = current_user
     authorize @user
     @bookings = @user.bookings
+  end
+
+  def star_dashboard
+    @user = current_user
+    authorize @user
+    @bookings = []
+    @user.services.each do |service|
+      service.bookings.each do |booking|
+        @bookings << booking
+      end
+    end
+    @bookings
   end
 
   private
