@@ -1,25 +1,28 @@
 <p>Star's name: <%= @user.name %></p>
+<p>Star's tags</p>
 <p>Star's bio: <%= @user.bio %></p>
 <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
 <p>------------------------------</p>
 <h3>Services:</h3>
 <% @services.each do |service| %>
-  <p>Service Title: <%= service.title %></p>
-  <p>Description: <%= service.description %></p>
-  <p>Price (RMB): <%= service.price %></p>
-  <%= link_to "Book this service", new_service_booking_path(service) %>
+  <%= link_to "Book #{service.title} #{service.price} RMB", new_service_booking_path(service) %>
   <% if policy(service).edit? %>
     <%= link_to "Update", edit_service_path(service) %>
   <% end %>
   <% if policy(service).destroy? %>
     <%= link_to "Delete", service_path(service), method: :delete, data: { confirm: "Are you sure?" } %>
-    <p>------------------------------</p>
   <% end %>
-  <p>-----------------------------------</p>
+  <p>------------------------------</p>
 <% end %>
 <p>-----------------------------------</p>
+
+<h1>Lastest Shoutouts</h1>
+<p>Seed with samples</p>
+<h1>Related</h1>
+<p>Show some other stars</p>
+
 <% if policy(Service).create? %>
-  <%= link_to "New service", new_service_path %>
+  <%= link_to "Add a new service", new_service_path %>
 <% end %>
 <%= link_to "View my bookings", service_bookings_path(@bookings) %>
 <%= link_to "Back to all stars", users_path %>
