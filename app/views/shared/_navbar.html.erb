@@ -8,13 +8,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li>Welcome <%= current_user.name %></li>
+
+
+
+
+        <li class="navbar-link">
+          Welcome <%= current_user.name%></li>
         <li class="nav-item active">
           <%= link_to "Home", users_path, class: "navbar-link" %>
         </li>
         <li class="nav-item active">
           <% if current_user.star == true %>
-            <%= link_to "My Profile", current_user, class: "nav-link" %>
+            <%= link_to "My Profile", current_user, class: "navbar-link" %>
           <% end %>
         </li>
         <li class="nav-item active">
