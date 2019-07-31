@@ -9,6 +9,10 @@ class UserPolicy < ApplicationPolicy
     record_is_a_star?
   end
 
+  def dashboard?
+    true
+  end
+
   def create?
     user_is_owner_or_admin?
   end

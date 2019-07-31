@@ -5,7 +5,20 @@
 $body-font: "Roboto", "sans-serif";
 $headers-font: "Nunito", "sans-serif";
 
+/* Titles/H3 */
 
+.H3 {
+font-family: Nunito;
+font-style: normal;
+font-weight: 800;
+font-size: 35px;
+line-height: 207.9%;
+/* identical to box height, or 73px */
+letter-spacing: 6px;
+text-transform: uppercase;
+color: #121016;
+text-align: center;
+}
 
 
 
