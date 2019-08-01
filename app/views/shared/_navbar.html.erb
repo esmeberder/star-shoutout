@@ -8,14 +8,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="navbar-link">
-          Welcome <%= current_user.name%></li>
+
+         <li class="nav-item active">
+        <p> Welcome <%= current_user.name %> </p></li>
+
+
         <li class="nav-item active">
+
           <%= link_to "Browse Talent", users_path, class: "navbar-link" %>
+
         </li>
         <li class="nav-item active">
           <% if current_user.star == true %>
-            <%= link_to "Bookings", star_dashboard_path, class: "navbar-link" %>
+            <%= link_to "Bookings", star_dashboard_path, class: "" %>
           <% end %>
         </li>
         <li class="nav-item active">
