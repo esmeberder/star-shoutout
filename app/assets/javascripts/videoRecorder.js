@@ -95,14 +95,5 @@ navigator.mediaDevices.getUserMedia(constraintObj)
     console.log(err.name, err.message);
 });
 
-/*********************************
-getUserMedia returns a Promise
-resolve - returns a MediaStream Object
-reject returns one of the following errors
-AbortError - generic unknown cause
-NotAllowedError (SecurityError) - user rejected permissions
-NotFoundError - missing media track
-NotReadableError - user permissions given but hardware/OS error
-OverconstrainedError - constraint video settings preventing
-TypeError - audio: false, video: false
-*********************************/
+
+// <video id="vid2" controls="" src="blob:http://localhost:3000/756399d5-6781-46b5-ab5f-2938c8fb9636"></video>
