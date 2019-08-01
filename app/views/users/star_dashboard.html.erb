@@ -2,23 +2,25 @@
   <div class="row justify-content-center">
     <h1>Welcome <%= @user.name %>!</h1>
     <div class="col-12 col-lg-8">
-      <% @bookings.each do |booking| %>
-        <div class="row">
+      <div class="row">
+        <% @bookings.each do |booking| %>
           <div class="booking-info-card">
             <p>Service: <%= booking.service.title %></p>
             <p>Recipient: <%= booking.recipient %></p>
             <p>Instructions: <%= booking.instructions %></p>
+            <p>Status:
+              <% if booking.accepted == true %>
+                Accepted!
+              <% elsif booking.accepted == false %>
+                Rejected :(
+              <% end %></p>
             <%= simple_form_for booking do |f| %>
-              <%= f.input :accepted %>
+              <%= f.input :accepted, as: :radio_buttons %>
               <%= f.button :submit, class: "pink-button", value: "Submit" %>
-            </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       <% end %>
-
-
-
-
     </div>
   </div>
 </div>

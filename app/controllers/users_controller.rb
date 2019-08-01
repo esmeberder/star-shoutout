@@ -30,6 +30,9 @@ class UsersController < ApplicationController
     @user = current_user
     authorize @user
     @bookings = @user.bookings
+    @new_bookings = @bookings.where(accepted: nil)
+    @accepted_bookings = @bookings.where(accepted: true)
+    @rejected_bookings = @bookings.where(accepted: false)
   end
 
   def star_dashboard
