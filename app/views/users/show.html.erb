@@ -2,16 +2,23 @@
   <div class="row justify-content-center">
     <div class="col-12 col-lg-8">
       <div class="info col-md-12">
+        <div class="profile-card">
+          <div class="row">
+            <div class="col-md-6">
+              <%= icl_image_tag @user.photo, class:"profile-img" %>
+            </div>
+            <div class="col-md-6">
+              <div class="star-info">
+                <p>Star's name: <%= @user.name %></p>
+                <p>Star's tags</p>
+                <p>Star's bio: <%= @user.bio %></p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="row">
-          <div class="col-md-2">
-            <%= cl_image_tag @user.photo %>
-          </div>
-          <div class="col-md-4">
-            <p>Star's name: <%= @user.name %></p>
-            <p>Star's tags: <% @user.tag_list.each do |tag| %> <%= tag %> <% end %></p>
-            <p>Star's bio: <%= @user.bio %></p>
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-8">
+
             <h3>Services:</h3>
             <% @services.each do |service| %>
               <button class="purple-button-md"><%= link_to "Book #{service.title} #{service.price} RMB", new_service_booking_path(service) %></button>
@@ -63,6 +70,36 @@
         </div>
       </div>
       <div class="card-container col-md-12">
+
+        <div class="user-card">
+          <img src="http://n.sinaimg.cn/ent/transform/20170830/YTrt-fykkfat2498787.jpg" alt="">
+          <div class="user-infos">
+            <div>
+              <h2 class="p2">Made for Okipooamorn</h2>
+            </div>
+          </div>
+        </div>
+        <div class="user-card">
+          <img src="http://n.sinaimg.cn/ent/transform/20170830/YTrt-fykkfat2498787.jpg" alt="">
+
+          <div class="user-infos">
+            <div>
+              <h2 class="p2">Made for Okipooamorn</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="videos col-md-12">
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-8">
+            <h2>Related</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card-container col-md-12">
         <div class="user-card">
           <% @related_stars.each do |user| %>
             <div class="user-card">
@@ -93,3 +130,6 @@
           <%= link_to "Back to all stars", users_path%>
         </button>
       </div>
+    </div>
+  </div>
+</div>
