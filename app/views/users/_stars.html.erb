@@ -1,19 +1,18 @@
-<div class="col-md-12">
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-7">
-      <%= render 'search' %>
+<% @users.each do |user| %>
+  <div class="user-card">
+    <%= cl_image_tag user.photo%>
+    <div class="user-infos">
+      <div>
+        <p class="p2"><%= link_to user.name, user_path(user) %></p>
+        <p class="p1">Bio: <%= user.bio %></p>
+        <p><% user.tag_list.each do |tag| %>
+            <%= tag %>
+          <% end %></p>
+      </div>
+      <i class="far fa-heart"></i>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2">
-      <%= render 'filter' %>
-    </div>
-    <div class="card-container col-md-10">
-      <%= render 'stars' %>
-    </div>
-  </div>
-</div>
+<% end %>
 <!-- <div class="user-card">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
