@@ -5,7 +5,7 @@
         <div class="profile-card">
           <div class="row">
             <div class="col-md-6">
-              <%= icl_image_tag @user.photo, class:"profile-img" %>
+              <%= cl_image_tag @user.photo, class:"profile-img" %>
             </div>
             <div class="col-md-6">
               <div class="star-info">
@@ -18,7 +18,6 @@
         </div>
         <div class="row">
           <div class="col-md-8">
-
             <h3>Services:</h3>
             <% @services.each do |service| %>
               <button class="purple-button-md"><%= link_to "Book #{service.title} #{service.price} RMB", new_service_booking_path(service) %></button>
@@ -70,7 +69,6 @@
         </div>
       </div>
       <div class="card-container col-md-12">
-
         <div class="user-card">
           <img src="http://n.sinaimg.cn/ent/transform/20170830/YTrt-fykkfat2498787.jpg" alt="">
           <div class="user-infos">
@@ -81,7 +79,6 @@
         </div>
         <div class="user-card">
           <img src="http://n.sinaimg.cn/ent/transform/20170830/YTrt-fykkfat2498787.jpg" alt="">
-
           <div class="user-infos">
             <div>
               <h2 class="p2">Made for Okipooamorn</h2>
@@ -89,7 +86,6 @@
           </div>
         </div>
       </div>
-
       <div class="videos col-md-12">
         <div class="row">
           <div class="col-md-4">
