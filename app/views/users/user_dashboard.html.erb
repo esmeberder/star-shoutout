@@ -1,7 +1,9 @@
 <div class="container pt-5">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-8">
+    <h1>
       Welcome <%= @user.name %>
+    </h1>
+    <div class="col-12 col-lg-8">
       <% new_bookings = @bookings.where(accepted: nil) %>
       <% accepted_bookings = @bookings.where(accepted: true) %>
       <% rejected_bookings = @bookings.where(accepted: false) %>
