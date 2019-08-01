@@ -4,7 +4,7 @@
     <div class="user-infos">
       <div>
         <p class="p2"><%= link_to user.name, user_path(user) %></p>
-        <p class="p1">Bio: <%= user.bio %></p>
+        <p class="p1">"<%= user.bio %>"</p>
         <p><% user.tag_list.each do |tag| %>
             <%= tag %>
           <% end %></p>

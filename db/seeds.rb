@@ -1,4 +1,5 @@
-
+require 'faker'
+$tags
 pepper = "https://res.cloudinary.com/esmeberder/image/upload/v1564651218/pepper.jpg"
 admin = User.create!(
   name: "Esme Li",
@@ -32,6 +33,8 @@ actors.each do |actor|
   user = User.create!(
     name: actor[:name],
     email: email,
+    bio: Faker::Quotes::Shakespeare.hamlet_quote,
+    tag_list: ["Actor", "Broadway", "Musician", "Athlete", "Funny", "Dramatic", "Romantic Comedies", "ComicCon"].sample(3),
     password: '123456789',
     password_confirmation: '123456789',
     star: true
