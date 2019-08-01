@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
+  skip_after_action :verify_authorized, only: :tagged
 
   def index
     @users = policy_scope(User).where(star: true)
@@ -9,6 +10,15 @@ class UsersController < ApplicationController
     authorize @user
     @services = @user.services
     @bookings = @user.bookings
+    @related_stars = @user.find_related_tags
+  end
+
+  def tagged
+    if params[:tag].present?
+      @users = User.tagged_with(params[:tag])
+    else
+      @users = policy_scope(User).where(star: true)
+    end
   end
 
   def user_dashboard
@@ -36,6 +46,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :bio, :star, :photo)
+    params.require(:user).permit(:name, :bio, :star, :photo, tag_list: [])
   end
 end

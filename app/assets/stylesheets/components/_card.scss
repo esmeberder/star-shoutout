@@ -10,6 +10,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
 }
 
 .user-card img {
@@ -45,3 +46,36 @@
   top: -20px;
   width: 40px;
 }
+
+.profile-card{
+  border-radius:20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.profile-card img{
+  object-fit: cover;
+  height: 230px;
+  width: 250px;
+  border-radius:20px;
+  padding:10px;
+}
+
+.col-md-12 .row{
+  align-items: center;
+}
+
+.booking-info-card{
+    border-radius:20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin:30px auto;
+  padding:20px;
+      width: 800px;
+    height: 250px;
+}
+
+.col-12 .row{
+  margin:30px auto;
+}
+
+
+

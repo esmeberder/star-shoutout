@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   get 'user_dashboard', to: 'users#user_dashboard'
   get 'star_dashboard', to: 'users#star_dashboard'
+  get 'tagged', to: "users#tagged", as: :tagged
   resources :services do
     resources :bookings, shallow: true
   end
-
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
