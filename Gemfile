@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'acts-as-taggable-on', '~> 6.0'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'

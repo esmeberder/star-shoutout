@@ -9,6 +9,10 @@ class UserPolicy < ApplicationPolicy
     record_is_a_star?
   end
 
+  def tagged?
+    true
+  end
+
   def user_dashboard?
     true
   end
