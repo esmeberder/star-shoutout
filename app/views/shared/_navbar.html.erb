@@ -8,26 +8,31 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="navbar-link">
-          Welcome <%= current_user.name%></li>
+
+         <li class="nav-item active">
+        <p> Welcome <%= current_user.name %> </p></li>
+
+
         <li class="nav-item active">
-          <%= link_to "Home", users_path, class: "navbar-link" %>
+          <%= link_to "Home", users_path, class: "" %>
         </li>
+
+
         <li class="nav-item active">
           <% if current_user.star == true %>
-            <%= link_to "My Profile", current_user, class: "navbar-link" %>
+            <%= link_to "My Profile", current_user, class: "" %>
           <% end %>
         </li>
         <li class="nav-item active">
           <% if current_user.star == true %>
-            <%= link_to "Bookings", star_dashboard_path, class: "navbar-link" %>
+            <%= link_to "Bookings", star_dashboard_path, class: "" %>
           <% end %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Requests", user_dashboard_path, class: "navbar-link" %>
+          <%= link_to "Requests", user_dashboard_path, class: "" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Edit My Profile", edit_user_registration_path, class: "navbar-link" %>
+          <%= link_to "Edit My Profile", edit_user_registration_path, class: "" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
