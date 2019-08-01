@@ -1,3 +1,4 @@
+
 puts "Eradication"
 User.destroy_all
 Service.destroy_all
@@ -14,25 +15,44 @@ actors.each do |actor|
     password_confirmation: '123456789',
     star: true
   )
-  Service.create!(
+  s1 = Service.create!(
     title: "Shoutout",
     description: "Let me know who you want to give a shoutout to and I'll record a 2 min video!",
     price: 200,
     user_id: user.id
   )
-  Service.create!(
+  Booking.create!(
+    recipient: "John",
+    instructions: "John's your biggest fan! Can you wish him a Merry Christmas?",
+    user_id: admin.id,
+    service_id: s1.id
+  )
+  s2 = Service.create!(
     title: "Phone call",
     description: "I'll call anyone you want to talk for 30 seconds!",
     price: 500,
     user_id: user.id
   )
-  Service.create!(
+  Booking.create!(
+    recipient: "Oki",
+    instructions: "My name is Esme. Could you give my friend Oki a birthday shoutout?",
+    user_id: admin.id,
+    service_id: s2.id
+  )
+  s3 = Service.create!(
     title: "Guest Appearance",
     description: "I'll make a 1-hour guest appearance.",
     price: 10_000,
     user_id: user.id
   )
+  Booking.create!(
+    recipient: "Jinhong",
+    instructions: "Can you make a guest appearance for Jinhong's wedding?",
+    user_id: admin.id,
+    service_id: s3.id
+  )
 end
+
 
 puts "Created #{actors.count} stars"
 puts "Created #{(Service.count / actors.size)} services per actor"

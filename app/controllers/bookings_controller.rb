@@ -5,6 +5,14 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
+  # def star
+  #   @star = @booking.service.user
+  # end
+
+  # def customer
+  #   @customer = @booking.user
+  # end
+
   def show
     @service = Service.find(params[:service_id])
   end
@@ -13,7 +21,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     authorize @booking
     @service = Service.find(params[:service_id])
-
   end
 
   def create
@@ -23,7 +30,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.service_id = @service.id
     if @booking.save
-      redirect_to service_bookings_path(@service.id)
+      redirect_to user_dashboard_path
     else
       render :new
     end
@@ -36,7 +43,7 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
     if @booking.update(booking_params)
-      redirect_to service_bookings_path(@booking.service_id)
+      redirect_to star_dashboard_path
     else
       render :edit
     end

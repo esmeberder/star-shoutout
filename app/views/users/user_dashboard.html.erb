@@ -1,0 +1,34 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      Welcome <%= @user.name %>
+      <% new_bookings = @bookings.where(accepted: nil) %>
+      <% accepted_bookings = @bookings.where(accepted: true) %>
+      <% rejected_bookings = @bookings.where(accepted: false) %>
+      <h3>New Requests (<%= new_bookings.count %>):</h3>
+      <% new_bookings.each do |booking| %>
+        <p>Service: <%= booking.service.title %></p>
+        <p>Recipient: <%= booking.recipient %></p>
+        <p>Instructions: <%= booking.instructions %></p>
+        <p>Your request is new, wait for the star to respond</p>
+        <p>------------------------------</p>
+      <% end %>
+      <h3>Accepted (<%= accepted_bookings.count %>):</h3>
+      <% accepted_bookings.each do |booking| %>
+        <p>Service: <%= booking.service.title %></p>
+        <p>Recipient: <%= booking.recipient %></p>
+        <p>Instructions: <%= booking.instructions %></p>
+        <p>Your request has been accepted!</p>
+        <p>------------------------------</p>
+      <% end %>
+      <h3>Rejected (<%= rejected_bookings.count %>):</h3>
+      <% rejected_bookings.each do |booking| %>
+        <p>Service: <%= booking.service.title %></p>
+        <p>Recipient: <%= booking.recipient %></p>
+        <p>Instructions: <%= booking.instructions %></p>
+        <p>:( the star wasn't able to accept your request. Try another star!</p>
+        <p>------------------------------</p>
+      <% end %>
+    </div>
+  </div>
+</div>

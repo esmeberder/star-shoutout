@@ -1,7 +1,40 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+  background-image: $pink-gradient;
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
 }
+
+.navbar-logo-font {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 22px;
+  color: white;
+}
+
+.navbar-link{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    text-align: center;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.navbar-link-hover{
+  color: $pink;
+}
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
