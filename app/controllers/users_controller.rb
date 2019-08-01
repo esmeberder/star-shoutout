@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: :show
   skip_after_action :verify_authorized, only: :tagged
+  before_action :authenticate_user!, except: [:index, :tagged]
 
   def index
     if params[:query].present?
-      @users = User.where(title: params[:query])
+      @users = User.where("title ILIKE ?", "%#{params[:query]}%")
     else
       @users = policy_scope(User).where(star: true)
     end
