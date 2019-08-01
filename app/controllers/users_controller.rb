@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   skip_after_action :verify_authorized, only: :tagged
 
   def index
-    @users = policy_scope(User).where(star: true)
+    if params[:query].present?
+      @users = User.where(title: params[:query])
+    else
+      @users = policy_scope(User).where(star: true)
+    end
   end
 
   def show

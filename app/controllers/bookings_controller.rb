@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(booking_params_users)
     @service = Service.find(params[:service_id])
     authorize @booking
     @booking.user = current_user
@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
 
   def update
     authorize @booking
-    if @booking.update(booking_params)
+    if @booking.update(booking_params_stars)
       redirect_to star_dashboard_path
     else
       render :edit
@@ -55,7 +55,11 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def booking_params
+  def booking_params_users
+    params.require(:booking).permit(:recipient, :instructions, :user_id, :service_id)
+  end
+
+  def booking_params_stars
     params.require(:booking).permit(:recipient, :instructions, :accepted, :user_id, :service_id)
   end
 end
