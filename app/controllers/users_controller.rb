@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     if params[:query].present?
-      @users = User.where(title: params[:query])
+      @users = User.where("title ILIKE ?", "%#{params[:query]}%")
     else
       @users = policy_scope(User).where(star: true)
     end
