@@ -67,4 +67,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
 });
 
 
+var testingVideo = "TESTTESTTEST";
+console.log(testingVideo)
+
 // <video id="vid2" controls="" src="blob:http://localhost:3000/756399d5-6781-46b5-ab5f-2938c8fb9636"></video>
