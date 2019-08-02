@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
   # end
 
   def show
-    @service = Service.find(params[:service_id])
+    authorize @booking
   end
 
   def new
@@ -41,12 +41,11 @@ class BookingsController < ApplicationController
   end
 
   def update
+    # leftover crap from blob url upload attempt
     authorize @booking
-    if @booking.update(booking_params_stars)
-      redirect_to star_dashboard_path
-    else
-      render :edit
-    end
+    @booking.video = params[:local_url]
+    Cloudinary::Uploader.upload(@booking.video, :resource_type => :video)
+    redirect_to booking_path
   end
 
   private
