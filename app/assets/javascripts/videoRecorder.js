@@ -7,7 +7,7 @@ let constraintObj = {
 
 navigator.mediaDevices.getUserMedia(constraintObj)
 .then(function(mediaStreamObj) {
-    let video = document.querySelector('video');
+    let video = document.getElementById('recorder');
     if ("srcObject" in video) {
         video.srcObject = mediaStreamObj;
     } else {
