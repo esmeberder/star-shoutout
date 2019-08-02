@@ -1,32 +1,41 @@
 <div class="container pt-5">
+  <h1 class="text-center">
+    Welcome <%= @user.name %>
+  </h1>
   <div class="row justify-content-center">
-    <h1>
-      Welcome <%= @user.name %>
-    </h1>
     <div class="col-12 col-lg-8">
       <h3>New Requests (<%= @new_bookings.count %>):</h3>
       <% @new_bookings.each do |booking| %>
-        <p>Service: <%= booking.service.title %></p>
-        <p>Recipient: <%= booking.recipient %></p>
-        <p>Instructions: <%= booking.instructions %></p>
-        <p>Your request is new, wait for the star to respond</p>
-        <p>------------------------------</p>
+        <div class="row">
+          <div class="booking-info-card">
+            <p>Service: <%= booking.service.title %></p>
+            <p>Recipient: <%= booking.recipient %></p>
+            <p>Instructions: <%= booking.instructions %></p>
+            <p>Your request is new, wait for the star to respond</p>
+          </div>
+        </div>
       <% end %>
       <h3>Accepted (<%= @accepted_bookings.count %>):</h3>
       <% @accepted_bookings.each do |booking| %>
-        <p>Service: <%= booking.service.title %></p>
-        <p>Recipient: <%= booking.recipient %></p>
-        <p>Instructions: <%= booking.instructions %></p>
-        <p>Your request has been accepted!</p>
-        <p>------------------------------</p>
+        <div class="row">
+          <div class="booking-info-card">
+            <p>Service: <%= booking.service.title %></p>
+            <p>Recipient: <%= booking.recipient %></p>
+            <p>Instructions: <%= booking.instructions %></p>
+            <p>Your request has been accepted!</p>
+          </div>
+        </div>
       <% end %>
       <h3>Rejected (<%= @rejected_bookings.count %>):</h3>
       <% @rejected_bookings.each do |booking| %>
-        <p>Service: <%= booking.service.title %></p>
-        <p>Recipient: <%= booking.recipient %></p>
-        <p>Instructions: <%= booking.instructions %></p>
-        <p>:( the star wasn't able to accept your request. Try another star!</p>
-        <p>------------------------------</p>
+        <div class="row">
+          <div class="booking-info-card">
+            <p>Service: <%= booking.service.title %></p>
+            <p>Recipient: <%= booking.recipient %></p>
+            <p>Instructions: <%= booking.instructions %></p>
+            <p>:( the star wasn't able to accept your request. Try another star!</p>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
