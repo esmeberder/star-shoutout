@@ -1,59 +1,34 @@
 <!-- Page Content -->
 <div class="container">
-
   <!-- Portfolio Item Heading -->
   <h1 class="my-4">
-     <h3 class="my-3"><%= @user.name %> Profile Page</h3>
+    <h3 class="my-3"><%= @user.name %> Profile Page</h3>
   </h1>
-
   <!-- Portfolio Item Row -->
   <div class="row">
-
-
-
     <div class="col-md-4">
       <img class="img-fluid" src="https://cdn2.stylecraze.com/wp-content/uploads/2013/07/2840-10-Pictures-Of-Angelina-Jolie-Without-Makeup.jpg" alt="">
     </div>
-
     <div class="col-md-8">
-
       <p>Star's name: <%= @user.name %></p>
       <p>Star's tags:</p>
       <p>Star's bio: <%= @user.bio %></p>
       <h3 class="my-3">Services</h3>
-
-          <% @services.each do |service| %>
-            <button class="purple-button-md"><%= link_to "Book #{service.title} #{service.price} RMB", new_service_booking_path(service) %></button>
-              <% if policy(service).edit? %>
-                <%= link_to "Update", edit_service_path(service) %>
-              <% end %>
-              <% if policy(service).destroy? %>
-                <%= link_to "Delete", service_path(service), method: :delete, data: { confirm: "Are you sure?" } %><br>
-              <% end %>
-            <% end %>
-
-
-
+      <% @services.each do |service| %>
+        <button class="purple-button-md"><%= link_to "Book #{service.title} #{service.price} RMB", new_service_booking_path(service) %></button>
+        <% if policy(service).edit? %>
+          <%= link_to "Update", edit_service_path(service) %>
+        <% end %>
+        <% if policy(service).destroy? %>
+          <%= link_to "Delete", service_path(service), method: :delete, data: { confirm: "Are you sure?" } %><br>
+        <% end %>
+      <% end %>
     </div>
-
   </div>
   <!-- /.row -->
-
   <!-- Related Projects Row -->
   <h3 class="my-4">Latest Shoutouts</h3>
-
   <div class="row">
-
-    <div class="col-md-3 col-sm-6 mb-4">
-       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-         <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
-        </div>
-      </div>
-    </div>
-
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
@@ -63,19 +38,8 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-3 col-sm-6 mb-4">
-     <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-              <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-     <div class="card border-0 shadow">
+      <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Made for</h5>
@@ -83,24 +47,28 @@
         </div>
       </div>
     </div>
-
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Made for</h5>
+          <div class="card-text text-black-50">Oki Pooamorn</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Made for</h5>
+          <div class="card-text text-black-50">Oki Pooamorn</div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- /.row -->
-
   <h3 class="my-4">Related</h3>
-
   <div class="row">
-
-    <div class="col-md-3 col-sm-6 mb-4">
-       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-         <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
-        </div>
-      </div>
-    </div>
-
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
@@ -110,19 +78,8 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-3 col-sm-6 mb-4">
-     <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-              <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-     <div class="card border-0 shadow">
+      <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Made for</h5>
@@ -130,8 +87,25 @@
         </div>
       </div>
     </div>
-
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Made for</h5>
+          <div class="card-text text-black-50">Oki Pooamorn</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Made for</h5>
+          <div class="card-text text-black-50">Oki Pooamorn</div>
+        </div>
+      </div>
+    </div>
   </div>
-
-</div></div>
+</div>
+</div>
 <!-- /.container -->
