@@ -77,6 +77,21 @@
 }
 
 .grey-button-md a {
-  color:black
+  color:black;
+  font-size:14px;
 }
 
+.active {
+    border-radius: 6px;
+  width: 130px;
+  height: 43px;
+  color:white;
+  background-image: $purple-gradient;
+  font-size: 14px;
+      outline: 0;
+    border: 0;
+}
+
+.active a{
+  color:white;
+}
