@@ -41,11 +41,8 @@ class BookingsController < ApplicationController
   end
 
   def update
-    # leftover crap from blob url upload attempt
     authorize @booking
-    @booking.video = params[:local_url]
-    Cloudinary::Uploader.upload(@booking.video, :resource_type => :video)
-    redirect_to booking_path
+    redirect_to star_dashboard_path
   end
 
   private

@@ -10,7 +10,9 @@
 <h2>Is it good enough?</h2>
 
 
-<!-- button goes here -->
+<%= simple_form_for [@booking] do |f| %>
+  <%= f.submit "submit", class: "btn btn-primary" %>
+<% end %>
 
 <!--
 <video controls>
