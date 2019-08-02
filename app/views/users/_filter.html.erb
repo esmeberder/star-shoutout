@@ -1,5 +1,5 @@
 <h2>Categories</h2>
-<button class="purple-button-sm" id="filter"><%= link_to "All talent", users_path %></button>
+<button class="purple-button-sm m-1"><%= link_to "All talent", users_path %></button>
 <% $tags.each do |tag| %>
-  <button class="purple-button-sm" id="filter"><%= link_to tag, tagged_path(tag: tag) %></button>
+  <button class="grey-button-sm active m-1"><%= link_to tag, tagged_path(tag: tag) %></button>
 <% end %>
