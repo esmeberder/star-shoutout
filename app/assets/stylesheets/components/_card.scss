@@ -1,8 +1,13 @@
+.tag-container {
+  display: flex;
+}
+
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
 .user-card {
   margin:0px auto;
   width: 304px;
