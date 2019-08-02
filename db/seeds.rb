@@ -44,7 +44,7 @@ actors.each do |actor|
   s1 = Service.create!(
     title: "Shoutout",
     description: "Let me know who you want to give a shoutout to and I'll record a 2 min video!",
-    price: 200,
+    price: 2000,
     user_id: user.id
   )
   Booking.create!(
@@ -56,7 +56,7 @@ actors.each do |actor|
   s2 = Service.create!(
     title: "Phone call",
     description: "I'll call anyone you want to talk for 30 seconds!",
-    price: 500,
+    price: 5000,
     user_id: user.id
   )
   Booking.create!(
@@ -68,7 +68,7 @@ actors.each do |actor|
   s3 = Service.create!(
     title: "Guest Appearance",
     description: "I'll make a 1-hour guest appearance.",
-    price: 10_000,
+    price: 100000,
     user_id: user.id
   )
   Booking.create!(
