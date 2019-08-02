@@ -9,44 +9,50 @@
 //     padding-top: 15px;
 // }
 
+.navbar-nav {
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
 .nav-item > p {
-     font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 20px;
-    color: white;
-    text-align: center;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    display: block;
-    padding: 0.5rem 1rem;
-    box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
 }
 
 .nav-item > a {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 20px;
-    color: white;
-    text-align: center;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    display: block;
-    padding: 0.5rem 1rem;
-    box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
 
 .navbar-lewagon > a:hover {
-
     color: white;
     text-transform: underline;
-
   }
 }
-
-
 
 .navbar-logo-font {
   font-family: Nunito;
@@ -67,9 +73,9 @@
 
 
 .navbar-custom {
-padding-top: 1rem;
-padding-bottom: 1rem;
-background-image: $pink-gradient;
+  padding: 1rem;
+  background-image: $pink-gradient;
+  height: 10vh;
 }
 
 
