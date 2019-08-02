@@ -42,7 +42,11 @@ class BookingsController < ApplicationController
 
   def update
     authorize @booking
-    redirect_to star_dashboard_path
+    if @booking.update(booking_params_stars)
+      redirect_to star_dashboard_path
+    else
+      render :edit
+    end
   end
 
   private
