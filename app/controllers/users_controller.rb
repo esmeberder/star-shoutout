@@ -4,10 +4,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :tagged]
 
   def index
+    @users = policy_scope(User)
     if params[:query].present?
-      @users = User.where("title ILIKE ?", "%#{params[:query]}%")
+      @users = User.global_search(params[:query])
     else
-      @users = policy_scope(User).where(star: true)
+      @users = User.where(star: true)
     end
   end
 
