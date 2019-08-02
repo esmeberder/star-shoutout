@@ -1,30 +1,33 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <div class="navbar-logo-font"><%= link_to "Star Shoutout", root_path %></div>
-  <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+<div class="navbar navbar-expand-lg navbar-dark navbar-custom static-top ">
+  <div class="container">
+
+  <%= link_to "Star Shoutouts", root_path , class: "navbar-brand navbar-logo-font" %>
+
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+
+    <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
-
-         <li class="nav-item active">
-        <p> Welcome <%= current_user.name %> </p></li>
-
-
         <li class="nav-item active">
-
-          <%= link_to "Browse Talent", users_path, class: "navbar-link" %>
-
+          <p> Welcome <%= current_user.name %> </p>
         </li>
-        <li class="nav-item active">
+
+       <li class="nav-item">
+         <%= link_to "Browse Talent", users_path, class: "nav-link" %>
+        </li>
+
+       <li class="nav-item">
           <% if current_user.star == true %>
-            <%= link_to "Bookings", star_dashboard_path, class: "" %>
+            <%= link_to "Bookings", star_dashboard_path, class: "nav-link" %>
           <% end %>
         </li>
-        <li class="nav-item active">
-          <%= link_to "My Requests", user_dashboard_path, class: "navbar-link" %>
+
+        <li class="nav-item">
+          <%= link_to "My Requests", user_dashboard_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo? %>
@@ -47,4 +50,5 @@
       <% end %>
     </ul>
   </div>
+</div>
 </div>
