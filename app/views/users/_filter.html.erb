@@ -1,4 +1,4 @@
-<button class="purple-button-sm"><%= link_to "All talent", users_path %></button>
+<button class="purple-button-sm m-1"><%= link_to "All talent", users_path %></button>
 <% $tags.each do |tag| %>
-  <button class="grey-button-sm active"><%= link_to tag, tagged_path(tag: tag) %></button>
+  <button class="grey-button-sm active m-1"><%= link_to tag, tagged_path(tag: tag) %></button>
 <% end %>
