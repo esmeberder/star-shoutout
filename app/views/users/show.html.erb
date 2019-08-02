@@ -15,7 +15,7 @@
       <p>Star's bio: <%= @user.bio %></p>
       <h3 class="my-3">Services</h3>
       <% @services.each do |service| %>
-        <button class="purple-button-md"><%= link_to "Book #{service.title} #{service.price} RMB", new_service_booking_path(service) %></button>
+        <button class="purple-button-md"><%= link_to "Book #{service.title} $#{number_with_delimiter(service.price)}", new_service_booking_path(service) %></button>
         <% if policy(service).edit? %>
           <%= link_to "Update", edit_service_path(service) %>
         <% end %>
@@ -31,37 +31,37 @@
   <div class="row">
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/500x350/?eric" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
+          <div class="card-text text-black-50">Eric</div>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/500x350/?olivia" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
+          <div class="card-text text-black-50">Olivia</div>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/500x350/?jennifer" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
+          <div class="card-text text-black-50">Bing</div>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/500x350/?terry" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
+          <div class="card-text text-black-50">Calvin</div>
         </div>
       </div>
     </div>
@@ -71,37 +71,37 @@
   <div class="row">
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/500x350/?ryan" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
+          <h5 class="card-title mb-0">Jay Leno</h5>
+          <div class="card-text text-black-50">Comedian</div>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/500x350/?jake" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
+          <h5 class="card-title mb-0">John Mayer</h5>
+          <div class="card-text text-black-50">Musician</div>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/500x350/?sally" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
+          <h5 class="card-title mb-0">Olivia Munn</h5>
+          <div class="card-text text-black-50">Actress</div>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/500x350/?rebecca" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Made for</h5>
-          <div class="card-text text-black-50">Oki Pooamorn</div>
+          <h5 class="card-title mb-0">Constance Wu</h5>
+          <div class="card-text text-black-50">Actress</div>
         </div>
       </div>
     </div>
