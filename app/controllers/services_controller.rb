@@ -25,7 +25,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    authorize @service
+   authorize @service
   end
 
   def update

@@ -17,6 +17,7 @@
             <%= simple_form_for booking do |f| %>
               <%= f.input :accepted, as: :radio_buttons %>
               <%= f.button :submit, class: "pink-button", value: "Submit" %>
+              <%= link_to "Record", edit_booking_path(booking.id) %>
             <% end %>
           </div>
         </div>

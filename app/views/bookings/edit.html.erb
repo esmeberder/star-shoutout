@@ -1,0 +1,20 @@
+<p><button id='btnStart'>START RECORDING</button></p>
+<button id='btnStop'>STOP RECORDING</button>
+
+<video controls></video>
+<video id="vid2" controls></video>
+<%= javascript_include_tag 'videoRecorder' %>
+
+
+
+<h2>Is it good enough?</h2>
+
+
+<%= simple_form_for [@booking] do |f| %>
+  <%= f.submit "submit", class: "btn btn-primary" %>
+<% end %>
+
+<!--
+<video controls>
+  <source src="https://res.cloudinary.com/esmeberder/video/upload/v1564714288/rjahdhutboz9rbc6igtt.mp4" type="video/mp4">
+</video> -->
